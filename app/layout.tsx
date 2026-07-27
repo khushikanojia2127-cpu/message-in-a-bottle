@@ -1,10 +1,15 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Cinzel, Inter } from 'next/font/google'
 import './globals.css'
 
+const _cinzel = Cinzel({ subsets: ['latin'], weight: ['400', '600', '700'] })
+const _inter = Inter({ subsets: ['latin'] })
+
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Message in a Bottle | Anonymous notes cast into the sea',
+  description:
+    'Cork an anonymous message inside a pirate bottle, throw it into the ocean, and catch a bottle written by a stranger drifting somewhere in the deep.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -26,11 +31,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'dark',
+  themeColor: '#0a1f33',
 }
 
 export default function RootLayout({
@@ -39,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className="bg-background">
+      <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
