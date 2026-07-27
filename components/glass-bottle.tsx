@@ -7,15 +7,15 @@ export function GlassBottle({ className }: { className?: string }) {
       aria-label="Corked pirate glass bottle holding a rolled note"
     >
       {/* cork */}
-      <rect x="25" y="4" width="14" height="14" rx="3" fill="oklch(0.62 0.09 62)" />
-      <rect x="24" y="15" width="16" height="5" rx="2" fill="oklch(0.5 0.08 58)" />
+      <rect x="25" y="4" width="14" height="14" rx="3" fill="oklch(0.78 0.07 60)" />
+      <rect x="24" y="15" width="16" height="5" rx="2" fill="oklch(0.66 0.07 55)" />
       {/* neck */}
-      <rect x="27" y="19" width="10" height="18" fill="oklch(0.62 0.11 178 / 45%)" />
+      <rect x="27" y="19" width="10" height="18" fill="oklch(0.87 0.055 190 / 70%)" />
       {/* body */}
       <path
         d="M27 34c0 6-13 12-13 26v50c0 8 5 14 18 14s18-6 18-14V60c0-14-13-20-13-26z"
-        fill="oklch(0.62 0.13 182 / 42%)"
-        stroke="oklch(0.86 0.1 190 / 70%)"
+        fill="oklch(0.88 0.055 190 / 62%)"
+        stroke="oklch(0.72 0.07 200 / 85%)"
         strokeWidth="2"
       />
       {/* rolled note inside */}
@@ -26,7 +26,7 @@ export function GlassBottle({ className }: { className?: string }) {
         height="34"
         rx="4"
         transform="rotate(-8 32 83)"
-        fill="oklch(0.9 0.05 84)"
+        fill="oklch(0.96 0.026 70)"
       />
       <rect
         x="26"
@@ -35,7 +35,7 @@ export function GlassBottle({ className }: { className?: string }) {
         height="2"
         rx="1"
         transform="rotate(-8 32 83)"
-        fill="oklch(0.55 0.07 60 / 70%)"
+        fill="oklch(0.6 0.07 20 / 60%)"
       />
       <rect
         x="26"
@@ -44,7 +44,7 @@ export function GlassBottle({ className }: { className?: string }) {
         height="2"
         rx="1"
         transform="rotate(-8 32 83)"
-        fill="oklch(0.55 0.07 60 / 70%)"
+        fill="oklch(0.6 0.07 20 / 60%)"
       />
       <rect
         x="26"
@@ -53,7 +53,7 @@ export function GlassBottle({ className }: { className?: string }) {
         height="2"
         rx="1"
         transform="rotate(-8 32 83)"
-        fill="oklch(0.55 0.07 60 / 70%)"
+        fill="oklch(0.6 0.07 20 / 60%)"
       />
       {/* glass highlight */}
       <path
@@ -66,7 +66,7 @@ export function GlassBottle({ className }: { className?: string }) {
       {/* twine around the neck */}
       <path
         d="M26 24h12M26 29h12"
-        stroke="oklch(0.79 0.12 82)"
+        stroke="oklch(0.83 0.075 15)"
         strokeWidth="2"
         strokeLinecap="round"
       />

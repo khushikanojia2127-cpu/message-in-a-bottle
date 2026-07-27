@@ -113,7 +113,7 @@ export function BottleTide({ initialStats }: { initialStats: OceanStats }) {
         {/* ---------- Cast a bottle ---------- */}
         <section
           aria-labelledby="cast-heading"
-          className="rounded-3xl border border-border bg-card/70 p-6 shadow-[0_20px_60px_oklch(0.13_0.04_248/45%)] backdrop-blur-md sm:p-8"
+          className="rounded-3xl border border-border bg-card/80 p-6 shadow-[0_18px_50px_oklch(0.6_0.098_254/18%)] backdrop-blur-md sm:p-8"
         >
           <header className="flex items-center gap-3">
             <span className="flex size-11 items-center justify-center rounded-full bg-primary/15 text-primary">
@@ -137,7 +137,7 @@ export function BottleTide({ initialStats }: { initialStats: OceanStats }) {
             onChange={(event) => setMessage(event.target.value)}
             placeholder="Whisper it here - a confession, a hope, a warning for whoever finds this..."
             rows={5}
-            className="mt-5 w-full resize-none rounded-2xl border border-input bg-[oklch(0.16_0.045_246/70%)] p-4 text-base leading-relaxed text-foreground placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30 focus-visible:outline-none"
+            className="mt-5 w-full resize-none rounded-2xl border border-input bg-secondary/45 p-4 text-base leading-relaxed text-foreground placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30 focus-visible:outline-none"
           />
 
           <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
@@ -169,10 +169,10 @@ export function BottleTide({ initialStats }: { initialStats: OceanStats }) {
         {/* ---------- Catch a bottle ---------- */}
         <section
           aria-labelledby="catch-heading"
-          className="flex flex-col rounded-3xl border border-border bg-card/70 p-6 shadow-[0_20px_60px_oklch(0.13_0.04_248/45%)] backdrop-blur-md sm:p-8"
+          className="flex flex-col rounded-3xl border border-border bg-card/80 p-6 shadow-[0_18px_50px_oklch(0.6_0.098_254/18%)] backdrop-blur-md sm:p-8"
         >
           <header className="flex items-center gap-3">
-            <span className="flex size-11 items-center justify-center rounded-full bg-accent/20 text-accent">
+            <span className="flex size-11 items-center justify-center rounded-full bg-accent/45 text-accent-foreground">
               <Anchor className="size-5" />
             </span>
             <div>
@@ -187,11 +187,11 @@ export function BottleTide({ initialStats }: { initialStats: OceanStats }) {
 
           <div className="mt-6 flex flex-1 flex-col justify-center">
             {caught ? (
-              <figure className="rounded-2xl border border-accent/35 bg-[oklch(0.93_0.045_86)] p-5 text-[oklch(0.28_0.05_60)] shadow-inner">
-                <blockquote className="font-serif text-lg leading-relaxed whitespace-pre-wrap text-pretty">
+              <figure className="rounded-2xl border border-accent/45 bg-[oklch(0.96_0.026_70)] p-5 text-accent-foreground shadow-inner">
+                <blockquote className="text-lg leading-relaxed whitespace-pre-wrap text-pretty italic">
                   {caught.message}
                 </blockquote>
-                <figcaption className="mt-4 flex items-center justify-between border-t border-[oklch(0.28_0.05_60/20%)] pt-3 text-xs tracking-widest uppercase">
+                <figcaption className="mt-4 flex items-center justify-between border-t border-accent/50 pt-3 text-xs tracking-widest uppercase">
                   <span>from a stranger</span>
                   <span>{timeAdrift(caught.createdAt)}</span>
                 </figcaption>
@@ -212,7 +212,7 @@ export function BottleTide({ initialStats }: { initialStats: OceanStats }) {
             disabled={!sailorId || pending !== null}
             variant="outline"
             size="lg"
-            className="mt-6 h-12 w-full rounded-2xl border-accent/40 bg-accent/10 text-base text-accent hover:bg-accent/20 hover:text-accent"
+            className="mt-6 h-12 w-full rounded-2xl border-accent/60 bg-accent/35 text-base text-accent-foreground hover:bg-accent/55 hover:text-accent-foreground"
           >
             {pending === 'receive'
               ? 'Reaching into the deep...'
@@ -224,7 +224,7 @@ export function BottleTide({ initialStats }: { initialStats: OceanStats }) {
       </div>
 
       {/* ---------- Tide log ---------- */}
-      <dl className="mt-6 grid grid-cols-3 gap-3 rounded-3xl border border-border bg-card/50 p-5 text-center backdrop-blur-md">
+      <dl className="mt-6 grid grid-cols-3 gap-3 rounded-3xl border border-border bg-card/70 p-5 text-center backdrop-blur-md">
         <div>
           <dt className="text-xs tracking-widest text-muted-foreground uppercase">Adrift now</dt>
           <dd className="mt-1 font-serif text-2xl text-primary">{stats.drifting}</dd>
@@ -235,7 +235,7 @@ export function BottleTide({ initialStats }: { initialStats: OceanStats }) {
         </div>
         <div>
           <dt className="text-xs tracking-widest text-muted-foreground uppercase">Fished out</dt>
-          <dd className="mt-1 font-serif text-2xl text-accent">{stats.totalCaught}</dd>
+          <dd className="mt-1 font-serif text-2xl text-accent-foreground">{stats.totalCaught}</dd>
         </div>
       </dl>
 

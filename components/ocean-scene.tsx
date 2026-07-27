@@ -44,7 +44,7 @@ function Fish({
           opacity="0.85"
         />
         <path d="M4 17 0 5c8 2 10 7 10 12S8 27 0 29z" fill={color} opacity="0.6" />
-        <circle cx="48" cy="14" r="2" fill="oklch(0.19 0.05 244)" />
+        <circle cx="48" cy="14" r="2" fill="oklch(0.34 0.078 274)" />
       </svg>
     </div>
   )
@@ -53,45 +53,51 @@ function Fish({
 export function OceanScene() {
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 overflow-hidden">
-      {/* depth gradient: sunlit surface fading to abyss */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0.36_0.09_215)_0%,oklch(0.27_0.07_232)_35%,oklch(0.19_0.055_244)_70%,oklch(0.13_0.04_248)_100%)]" />
+      {/* pastel dusk surface fading into soft aqua depth */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0.93_0.05_15)_0%,oklch(0.94_0.035_60)_14%,oklch(0.93_0.04_205)_38%,oklch(0.89_0.05_192)_66%,oklch(0.85_0.055_240)_100%)]" />
 
-      {/* light shafts */}
+      {/* soft light shafts */}
       <div
         data-motion
-        className="absolute -top-1/4 left-[8%] h-[150%] w-40 bg-[linear-gradient(180deg,oklch(0.9_0.08_195/45%),transparent)] blur-2xl"
+        className="absolute -top-1/4 left-[8%] h-[150%] w-40 bg-[linear-gradient(180deg,oklch(0.99_0.02_60/85%),transparent)] blur-2xl"
         style={{ animation: 'caustics 11s ease-in-out infinite' }}
       />
       <div
         data-motion
-        className="absolute -top-1/4 left-[42%] h-[150%] w-24 bg-[linear-gradient(180deg,oklch(0.9_0.08_195/40%),transparent)] blur-2xl"
+        className="absolute -top-1/4 left-[42%] h-[150%] w-24 bg-[linear-gradient(180deg,oklch(0.97_0.04_20/70%),transparent)] blur-2xl"
         style={{ animation: 'caustics 14s ease-in-out 2s infinite' }}
       />
       <div
         data-motion
-        className="absolute -top-1/4 right-[16%] h-[150%] w-32 bg-[linear-gradient(180deg,oklch(0.9_0.08_195/35%),transparent)] blur-2xl"
+        className="absolute -top-1/4 right-[16%] h-[150%] w-32 bg-[linear-gradient(180deg,oklch(0.98_0.025_195/80%),transparent)] blur-2xl"
         style={{ animation: 'caustics 17s ease-in-out 4s infinite' }}
       />
 
       {/* reef + mermaid silhouette scene */}
       <div
         data-motion
-        className="absolute inset-x-0 bottom-0 h-[70vh] bg-cover bg-bottom bg-no-repeat opacity-60"
-        style={{ backgroundImage: 'url(/images/reef-scene.png)', animation: 'drift 40s ease-in-out infinite' }}
+        className="absolute -inset-x-[8%] bottom-0 h-[72vh] bg-cover bg-bottom bg-no-repeat opacity-70"
+        style={{
+          backgroundImage: 'url(/images/reef-scene.png)',
+          animation: 'drift 40s ease-in-out infinite',
+          maskImage:
+            'linear-gradient(180deg, transparent 0%, oklch(0 0 0 / 55%) 22%, black 55%), linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%)',
+          maskComposite: 'intersect',
+        }}
       />
 
       {/* fish schools */}
-      <Fish top="18%" color="oklch(0.79 0.12 82)" duration="46s" delay="0s" scale={0.75} />
-      <Fish top="34%" color="oklch(0.75 0.13 195)" duration="62s" delay="6s" scale={1} />
-      <Fish top="52%" color="oklch(0.68 0.1 200)" duration="54s" delay="14s" scale={0.6} />
-      <Fish top="70%" color="oklch(0.79 0.12 82)" duration="72s" delay="22s" scale={0.9} />
+      <Fish top="18%" color="oklch(0.78 0.09 15)" duration="46s" delay="0s" scale={0.75} />
+      <Fish top="34%" color="oklch(0.66 0.09 250)" duration="62s" delay="6s" scale={1} />
+      <Fish top="52%" color="oklch(0.74 0.08 190)" duration="54s" delay="14s" scale={0.6} />
+      <Fish top="70%" color="oklch(0.78 0.09 15)" duration="72s" delay="22s" scale={0.9} />
 
       {/* rising bubbles */}
       {BUBBLES.map((bubble) => (
         <span
           key={bubble.left}
           data-motion
-          className="absolute bottom-0 rounded-full border border-[oklch(0.95_0.03_190/60%)] bg-[oklch(0.9_0.05_195/25%)]"
+          className="absolute bottom-0 rounded-full border border-[oklch(0.99_0.015_200/85%)] bg-[oklch(1_0_0/45%)]"
           style={{
             left: bubble.left,
             width: bubble.size,
@@ -104,15 +110,16 @@ export function OceanScene() {
       {/* foreground coral seabed */}
       <div
         data-motion
-        className="absolute inset-x-0 bottom-0 h-[30vh] bg-cover bg-bottom bg-no-repeat opacity-90"
+        className="absolute -inset-x-[6%] bottom-0 h-[32vh] bg-cover bg-bottom bg-no-repeat opacity-95"
         style={{
           backgroundImage: 'url(/images/coral-foreground.png)',
           animation: 'sway 18s ease-in-out infinite',
+          maskImage: 'linear-gradient(180deg, transparent 0%, oklch(0 0 0 / 60%) 28%, black 62%)',
         }}
       />
 
-      {/* vignette so text stays readable */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_25%,oklch(0.13_0.04_248/85%)_100%)]" />
+      {/* pale wash so text stays readable over the reef */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,oklch(0.97_0.02_205/72%)_0%,oklch(0.94_0.03_200/45%)_45%,oklch(0.85_0.055_240/30%)_100%)]" />
     </div>
   )
 }

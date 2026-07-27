@@ -15,7 +15,7 @@ export default async function Page() {
 
       <div className="relative mx-auto flex min-h-svh w-full max-w-5xl flex-col justify-center px-4 py-14 sm:px-6 sm:py-20">
         <header className="mb-10 text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs tracking-[0.2em] text-primary uppercase backdrop-blur-md">
+          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-1.5 text-xs tracking-[0.2em] text-primary uppercase backdrop-blur-md">
             <Shell className="size-3.5" />
             anonymous tides
           </p>
